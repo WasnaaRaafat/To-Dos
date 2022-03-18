@@ -1,1 +1,0 @@
-Hello there, I built a "To dos" React app using create-react-app and used React hooks and React query to implement CURD operations with a local jason server fake api endpoint, please run the application files on local host as well as watch the json-server db.json file locally using the terminal.

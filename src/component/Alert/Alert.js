@@ -40,7 +40,9 @@ const Alert = ({ msg }) => {
           </svg>
         </div>
         <div className='w-full'>
-          <h5 className='text-base font-semibold mb-3 text-[#B45454]'>{msg}</h5>
+          <h5 className='text-base font-semibold mb-3 text-[#B45454] mt-1'>
+            {msg}
+          </h5>
         </div>
       </div>
     </div>

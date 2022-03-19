@@ -40,7 +40,7 @@ const Success = ({ msg }) => {
           </svg>
         </div>
         <div className='w-full'>
-          <h5 className='text-lg font-semibold mb-3 text-dark'>{msg} </h5>
+          <h5 className='text-lg font-semibold mb-3 text-dark mt-1 '>{msg} </h5>
         </div>
       </div>
     </div>

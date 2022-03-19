@@ -7,8 +7,14 @@
       "id": 1
     },
     {
-      "task": "Drink alot of water",
-      "description": "at least 2L a day.",
+      "task": "Drink Water",
+      "description": "At least 2L a day",
+      "date": "19/3/2022",
+      "id": 2
+    },
+    {
+      "task": "Eat Healthy",
+      "description": "like more veges and fruits ",
       "date": "19/3/2022",
       "id": 3
     }

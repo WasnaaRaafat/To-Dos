@@ -136,8 +136,9 @@ const Update = () => {
         </div>
       </form>
       <div className='flex justify-center mt-8'>
-        <button
-          className='
+        <Link to='/Home'>
+          <button
+            className='
             py-4
             px-10
             lg:px-8
@@ -151,9 +152,10 @@ const Update = () => {
             font-normal
             rounded-full
             mb-5'
-        >
-          <Link to='/Home'>Back to Home</Link>
-        </button>
+          >
+            Back to Home
+          </button>
+        </Link>
       </div>
       {empty && <Alert msg='please Enter values in the inputs above' />}
     </div>

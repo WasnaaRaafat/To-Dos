@@ -50,6 +50,7 @@ const Add = ({ refetch }) => {
       setTimeout(() => {
         setSuccess(false);
       }, 5000);
+      setTasks({});
     } else {
       setEmpty(true);
       setTimeout(() => {
@@ -150,7 +151,7 @@ const Add = ({ refetch }) => {
           </button>
 
           {empty && <Alert msg='please Enter values in the inputs above' />}
-          {success && <Success msg='A new To dos added' />}
+          {success && <Success msg='A new task added, good luck!' />}
         </div>
       </form>
     </div>

@@ -7,7 +7,6 @@ const Display = ({ data, refetch }) => {
   const [isDeleted, setIsDeleted] = useState(false);
   const handelUpdate = (id, e) => {
     e.preventDefault();
-    console.log(id);
   };
 
   const handelDelete = async (id, e) => {
@@ -78,13 +77,6 @@ const Display = ({ data, refetch }) => {
                         >
                           Delete
                         </button>
-
-                        {/* <button
-                          onClick={(e) => handelDelete(tasks.id, e)}
-                          className=' inline-block rounded-full text-base font-medium text-danger  hover:underline transition mr-10'
-                        >
-                          Delete
-                        </button> */}
                       </div>
                       <p className='text-xs text-slate-400 font-bold inline-block mt-4 '>
                         Created on:

@@ -3,7 +3,6 @@ import Display from './Display';
 import Add from './Add';
 import axios from 'axios';
 import Alert from './Alert/Alert';
-import { useEffect } from 'react';
 
 const queryClient = new QueryClient();
 
@@ -14,11 +13,7 @@ const FetchData = () => {
   };
   const { data, status, error, refetch } = useQuery('todos', getData);
 
-  useEffect(() => {
-    return () => {};
-  }, []);
-
-  console.log('Hello I am FetchData Component');
+  // console.log('Hello I am FetchData Component');
   return (
     <div>
       <Add refetch={refetch} />

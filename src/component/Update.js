@@ -1,31 +1,30 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Alert from './Alert/Alert';
 
 const Update = () => {
   const navigate = useNavigate();
   const [empty, setEmpty] = useState(false);
-
   const { state } = useLocation();
   const id = state.id;
-  console.log(state.task + ' ---- ' + state.description);
+  //   console.log(state.task + ' ---- ' + state.description);
 
   const [updatedData, setUpdatedData] = useState({
     task: state.task,
     description: state.description,
     date: state.date,
   });
-  console.log(
-    'I am updated data ' + updatedData.task + ' ' + updatedData.description
-  );
+  //   console.log(
+  //     'I am updated data ' + updatedData.task + ' ' + updatedData.description
+  //   );
 
   const handelonchange1 = (e) => {
     setUpdatedData((updatedData) => ({
       ...updatedData,
       task: e.target.value,
     }));
-    console.log('I am input task ' + updatedData.task);
+    // console.log('I am input task ' + updatedData.task);
   };
 
   const handelonchange2 = (e) => {
@@ -33,12 +32,12 @@ const Update = () => {
       ...updatedData,
       description: e.target.value,
     }));
-    console.log('I am input description ' + updatedData.description);
+    // console.log('I am input description ' + updatedData.description);
   };
 
   const handelOnSubmit = async (e) => {
     e.preventDefault();
-    console.log('I am updated data in the submit ' + updatedData);
+    // console.log('I am updated data in the submit ' + updatedData);
     if (updatedData.description && updatedData.task) {
       setEmpty(false);
 
@@ -57,10 +56,6 @@ const Update = () => {
     }
   };
   // for useEffect Clean up of data history
-
-  useEffect(() => {
-    return () => {};
-  }, [state, updatedData]);
 
   return (
     <div className='update container mt-8 '>

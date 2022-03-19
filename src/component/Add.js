@@ -40,8 +40,8 @@ const Add = ({ refetch }) => {
 
   const handelOnSubmit = async (e) => {
     e.preventDefault();
+    // console.log(tasks);
 
-    console.log(tasks);
     if (tasks.task && tasks.description) {
       const res = await axios.post('http://localhost:3000/tasks', tasks);
       console.log('Data Added ' + res.status);
@@ -59,6 +59,7 @@ const Add = ({ refetch }) => {
     refetch();
     clearInputs();
   };
+
   return (
     <div className='add container mt-8 '>
       <h1 className=' text-blue-400 text-center text-4xl my-9 font-bold'>

@@ -50,19 +50,18 @@ const NotFound = () => {
         </div>
         <div
           className='
-      absolute
-      -z-10
-      w-full
-      h-full
-      top-0
-      left-0
-      flex
-      justify-between
-      items-center
-      space-x-5
-      md:space-x-8
-      lg:space-x-14
-      '
+                    absolute
+                    -z-10
+                    w-full
+                    h-full
+                    top-0
+                    left-0
+                    flex
+                    justify-between
+                    items-center
+                    space-x-5
+                    md:space-x-8
+                    lg:space-x-14'
         >
           <div className='w-1/3 h-full bg-gradient-to-t from-[#FFFFFF14] to-[#C4C4C400]'></div>
           <div className='w-1/3 h-full flex'>

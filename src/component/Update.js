@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Alert from './Alert/Alert';
-const current = new Date();
+
 const Update = () => {
+  const navigate = useNavigate();
+  const [empty, setEmpty] = useState(false);
+
   const { state } = useLocation();
   const id = state.id;
   console.log(state.task + ' ---- ' + state.description);
@@ -30,20 +33,26 @@ const Update = () => {
       ...updatedData,
       description: e.target.value,
     }));
-    console.log('I am input des ' + updatedData.description);
+    console.log('I am input description ' + updatedData.description);
   };
 
   const handelOnSubmit = async (e) => {
     e.preventDefault();
     console.log('I am updated data in the submit ' + updatedData);
     if (updatedData.description && updatedData.task) {
+      setEmpty(false);
+
       const res = await axios.put(
         `http://localhost:3000/tasks/${id}`,
         updatedData
       );
-
-      return console.log(res.status);
+      navigate('/Home');
+      return console.log('Data Updated ' + res.status);
     } else {
+      setEmpty(true);
+      setTimeout(() => {
+        setEmpty(false);
+      }, 5000);
       <Alert msg='Please Enter a Task and a Description' />;
     }
   };
@@ -58,7 +67,7 @@ const Update = () => {
       <h1 className=' text-secondary text-center text-4xl my-9 font-bold'>
         Edit Your Task
       </h1>
-      <form action=''>
+      <form action='' onSubmit={handelOnSubmit}>
         <div className='flex flex-wrap mx-auto my-6 justify-center'>
           <div className='w-full md:w-1/2 lg:w-1/3 px-4'>
             <div className='mb-12'>
@@ -123,47 +132,35 @@ const Update = () => {
         </div>
         <div className='flex justify-center'>
           <button
-            onClick={handelOnSubmit}
-            className='
-   py-4
-   px-10
-   lg:px-8
-   xl:px-10
-   inline-flex
-   items-center
-   justify-center
-   text-center text-white text-base
-   bg-secondary
-   hover:bg-opacity-90
-   font-normal
-   rounded-full
-  '
+            className='py-4 px-10 lg:px-8 xl:px-10 inline-flex items-center justify-center
+              text-center text-white text-base  bg-secondary hover:bg-opacity-90 font-normal rounded-full'
             type='submit'
           >
-            <Link to='/Home'>Edit</Link>
+            Edit
           </button>
         </div>
       </form>
       <div className='flex justify-center mt-8'>
         <button
           className='
-   py-4
-   px-10
-   lg:px-8
-   xl:px-10
-   inline-flex
-   items-center
-   justify-center
-   text-center text-white text-base
-   bg-primary
-   hover:bg-opacity-90
-   font-normal
-   rounded-full
-   '
+            py-4
+            px-10
+            lg:px-8
+            xl:px-10
+            inline-flex
+            items-center
+            justify-center
+            text-center text-white text-base
+            bg-primary
+            hover:bg-opacity-90
+            font-normal
+            rounded-full
+            mb-5'
         >
           <Link to='/Home'>Back to Home</Link>
         </button>
       </div>
+      {empty && <Alert msg='please Enter values in the inputs above' />}
     </div>
   );
 };

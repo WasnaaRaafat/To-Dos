@@ -2,15 +2,21 @@
   "tasks": [
     {
       "task": "Buy",
-      "description": "typicoder",
+      "description": "Veges, Fruits, milk.",
       "date": "17/3/2022",
       "id": 1
     },
     {
-      "task": "sssdddd",
-      "description": "xxj",
-      "date": "18/3/2022",
+      "task": "Eat",
+      "description": "Healthy",
+      "date": "19/3/2022",
       "id": 2
+    },
+    {
+      "task": "Drink alot of water",
+      "description": "at least 2L a day.",
+      "date": "19/3/2022",
+      "id": 3
     }
   ]
 }

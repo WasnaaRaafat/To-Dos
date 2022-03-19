@@ -44,7 +44,7 @@ const Add = ({ refetch }) => {
     console.log(tasks);
     if (tasks.task && tasks.description) {
       const res = await axios.post('http://localhost:3000/tasks', tasks);
-      console.log('Updated ' + res.status);
+      console.log('Data Added ' + res.status);
       setEmpty(false);
       setSuccess(true);
       setTimeout(() => {
@@ -80,20 +80,19 @@ const Add = ({ refetch }) => {
                 type='text'
                 placeholder='New Task'
                 className='
-            w-full
-            border-[1.5px] border-form-stroke
-            rounded-lg
-            py-3
-            px-5
-            font-medium
-            text-body-color
-            placeholder-body-color
-            outline-none
-            focus:border-primary
-            active:border-primary
-            transition
-            disabled:bg-[#F5F7FD] disabled:cursor-default
-            '
+              w-full
+              border-[1.5px] border-form-stroke
+              rounded-lg
+              py-3
+              px-5
+              font-medium
+              text-body-color
+              placeholder-body-color
+              outline-none
+              focus:border-primary
+              active:border-primary
+              transition
+              disabled:bg-[#F5F7FD] disabled:cursor-default'
               />
             </div>
           </div>
@@ -111,20 +110,19 @@ const Add = ({ refetch }) => {
                 type='text'
                 placeholder='Task Description'
                 className='
-            w-full
-            border-[1.5px] border-form-stroke
-            rounded-lg
-            py-3
-            px-5
-            font-medium
-            text-body-color
-            placeholder-body-color
-            outline-none
-            focus:border-primary
-            active:border-primary
-            transition
-            disabled:bg-[#F5F7FD] disabled:cursor-default
-            '
+              w-full
+              border-[1.5px] border-form-stroke
+              rounded-lg
+              py-3
+              px-5
+              font-medium
+              text-body-color
+              placeholder-body-color
+              outline-none
+              focus:border-primary
+              active:border-primary
+              transition
+              disabled:bg-[#F5F7FD] disabled:cursor-default'
               />
             </div>
           </div>
@@ -132,20 +130,19 @@ const Add = ({ refetch }) => {
         <div className='flex items-center justify-center flex-col mb-9'>
           <button
             className='
-   py-4
-   px-10
-   lg:px-8
-   xl:px-10
-   inline-flex
-   items-center
-   justify-center
-   text-center text-white text-base
-   bg-primary
-   hover:bg-opacity-90
-   font-normal
-   rounded-full
-   mb-6
-   '
+              py-4
+              px-10
+              lg:px-8
+              xl:px-10
+              inline-flex
+              items-center
+              justify-center
+              text-center text-white text-base
+              bg-primary
+              hover:bg-opacity-90
+              font-normal
+              rounded-full
+              mb-6'
             type='submit'
           >
             Add

@@ -3,6 +3,8 @@ import Display from './Display';
 import Add from './Add';
 import axios from 'axios';
 import Alert from './Alert/Alert';
+import { useEffect } from 'react';
+
 const queryClient = new QueryClient();
 
 const FetchData = () => {
@@ -12,6 +14,11 @@ const FetchData = () => {
   };
   const { data, status, error, refetch } = useQuery('todos', getData);
 
+  useEffect(() => {
+    return () => {};
+  }, []);
+
+  console.log('Hello I am FetchData Component');
   return (
     <div>
       <Add refetch={refetch} />
@@ -29,21 +36,7 @@ const FetchData = () => {
         <div className='flex items-center justify-center flex-col'>
           <Alert msg={error.message} />
           <button
-            className='
-   py-4
-   px-10
-   lg:px-8
-   xl:px-10
-   inline-flex
-   items-center
-   justify-center
-   text-center text-white text-base
-   bg-danger
-   hover:bg-opacity-90
-   font-normal
-   rounded-full
-   my-6
-   '
+            className=' py-4 px-10 lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-white text-base bg-danger hover:bg-opacity-90 font-normal rounded-full my-6'
             onClick={refetch}
           >
             Retry Again

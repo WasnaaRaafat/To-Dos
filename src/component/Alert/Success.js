@@ -3,29 +3,27 @@ const Success = ({ msg }) => {
     <div className='container mb-8 transition-all'>
       <div
         className='
-   w-full
-   bg-[#34D399] bg-opacity-[15%]
-   px-7
-   py-8
-   md:p-9
-   rounded-lg
-   shadow-md
-   flex
-   border-l-[6px] border-[#34D399]
-   '
+        w-full
+        bg-[#34D399] bg-opacity-[15%]
+        px-7
+        py-8
+        md:p-9
+        rounded-lg
+        shadow-md
+        flex
+        border-l-[6px] border-[#34D399]'
       >
         <div
           className='
-      max-w-[36px]
-      w-full
-      h-9
-      flex
-      items-center
-      justify-center
-      rounded-lg
-      mr-5
-      bg-[#34D399]
-      '
+        max-w-[36px]
+        w-full
+        h-9
+        flex
+        items-center
+        justify-center
+        rounded-lg
+        mr-5
+        bg-[#34D399]'
         >
           <svg
             width='16'

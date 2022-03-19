@@ -35,15 +35,7 @@ const Display = ({ data, refetch }) => {
           <div className='flex flex-wrap flex-row -mx-4'>
             {data.map((tasks, key) => (
               <div className='w-full md:w-1/2 xl:w-1/3 px-4' key={key}>
-                <div
-                  className='
-   w-full
-   bg-secondary bg-opacity-[15%]
-   rounded-lg
-   shadow-md
-   border-l-[6px] border-secondary
-   '
-                >
+                <div className=' w-full bg-secondary bg-opacity-[15%] rounded-lg  shadow-md border-l-[6px] border-secondary'>
                   <div className='bg-white rounded-lg overflow-hidden mb-10'>
                     <div className=' p-9 sm:p-9 md:p-9 xl:p-13 text-left'>
                       <h3
@@ -58,16 +50,7 @@ const Display = ({ data, refetch }) => {
                       <div className='flex items-center '>
                         <button
                           onClick={(e) => handelUpdate(tasks.id, e)}
-                          className='
-                     inline-block
-                     mr-5
-                     rounded-full
-                     text-base 
-                     font-medium
-                     text-secondary
-                     hover:underline
-                     transition
-                     '
+                          className=' inline-block mr-5  rounded-full text-base font-medium text-secondary hover:underline transition'
                         >
                           <Link
                             to='/Update'
@@ -83,22 +66,30 @@ const Display = ({ data, refetch }) => {
                         </button>
 
                         <button
-                          onClick={(e) => handelDelete(tasks.id, e)}
-                          className='
-                     inline-block
-                     rounded-full
-                     text-base 
-                     font-medium
-                     text-danger
-                     hover:underline
-                     transition
-                  mr-10
-                     '
+                          className=' inline-block rounded-full text-base font-medium text-danger  hover:underline transition mr-10'
+                          onClick={(e) => {
+                            const confirmBox = window.confirm(
+                              'Are you sure you really want to delete this Task?'
+                            );
+                            if (confirmBox === true) {
+                              handelDelete(tasks.id, e);
+                            }
+                          }}
                         >
                           Delete
                         </button>
-                        <p className='text-sm text-slate-400 '>{tasks.date}</p>
+
+                        {/* <button
+                          onClick={(e) => handelDelete(tasks.id, e)}
+                          className=' inline-block rounded-full text-base font-medium text-danger  hover:underline transition mr-10'
+                        >
+                          Delete
+                        </button> */}
                       </div>
+                      <p className='text-xs text-slate-400 font-bold inline-block mt-4 '>
+                        Created on:
+                        <span className='ml-1'> {tasks.date}</span>
+                      </p>
                     </div>
                   </div>
                 </div>
